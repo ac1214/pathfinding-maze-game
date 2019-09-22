@@ -5,7 +5,8 @@ This is a game that generates a maze using a depth-first search algorithm. The o
 
 
 ## Run this project  
-Maven can be used to run this program through the command line with the following command.
+Maven can be used to build/run this program through the command line.  
+To run this project, input the following command while in the project directory.
 
     mvn clean javafx:run
 
