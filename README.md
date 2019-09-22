@@ -1,5 +1,5 @@
 # pathfinding-maze-game
-![Farmers Market Finder Demo](demo/demo.gif)  
+![Pathfinding Maze Game Demo](demo/demo.gif)  
 
 This is a game that generates a maze using a depth-first search algorithm. The objective of the player is to traverse the maze to collect all the coins while trying to avoid the enemy. The enemy is continuously chasing the player, its path is generated using a breadth-first search algorithm.
 
