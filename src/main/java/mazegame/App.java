@@ -25,8 +25,8 @@ public class App extends Application {
     private final int MAZESIDEINCREMENT = 5;
 
     private int numOfLoops;
-    private final int INITIALLOOPCOUNT = 10;
-    private final int LOOPINCREMENT = 5;
+    private final int INITIALLOOPCOUNT = 15;
+    private final int LOOPINCREMENT = 10;
 
     private MazeData mazeData;
     private GridData[][] mazeInfo;

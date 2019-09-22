@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5456436a-29b7-47cf-968e-4b86733a7985" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mazegame/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mazegame/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mazegame/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mazegame/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mazegame/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mazegame/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mazegame/GameManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mazegame/GameManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mazegame/GridData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mazegame/GridData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mazegame/MazeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mazegame/MazeData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mazegame/MazeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mazegame/MazeDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mazegame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mazegame/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mazegame/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mazegame/Sprite.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
