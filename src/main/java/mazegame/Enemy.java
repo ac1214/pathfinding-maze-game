@@ -14,13 +14,14 @@ public class Enemy extends Sprite {
     /**
      * This is a constructor that creates an enemy with starting coordinates in the bottom right
      * corner and saves the current level data.
+     *
      * @param mazeSideLength current side length of the maze
-     * @param newMazeInfo new maze info that contains the properties of the maze
+     * @param newMazeInfo    new maze info that contains the properties of the maze
      */
-    public Enemy(int mazeSideLength, GridData[][] newMazeInfo){
+    public Enemy(int mazeSideLength, GridData[][] newMazeInfo) {
         //Randomly generate 2 coordinates in the bottom right quadrant
-        int xCoordinate = ThreadLocalRandom.current().nextInt(mazeSideLength/2 + 1, mazeSideLength);
-        int yCoordinate = ThreadLocalRandom.current().nextInt(mazeSideLength/2 + 1, mazeSideLength);
+        int xCoordinate = ThreadLocalRandom.current().nextInt(mazeSideLength / 2 + 1, mazeSideLength);
+        int yCoordinate = ThreadLocalRandom.current().nextInt(mazeSideLength / 2 + 1, mazeSideLength);
 
         setCoordinates(xCoordinate, yCoordinate);
         mazeInfo = newMazeInfo;
@@ -28,13 +29,14 @@ public class Enemy extends Sprite {
 
     /**
      * This method will set new level data for the enemy when the player proceeds to a new level.
-     * @param newMazeInfo new maze info that contains the properties of the maze
+     *
+     * @param newMazeInfo    new maze info that contains the properties of the maze
      * @param mazeSideLength new side length of the maze when leveled up
      */
     public void setNewLevelData(GridData[][] newMazeInfo, int mazeSideLength) {
         //Randomly generate 2 coordinates in the bottom right quadrant
-        int xCoordinate = ThreadLocalRandom.current().nextInt(mazeSideLength/2 + 1, mazeSideLength);
-        int yCoordinate = ThreadLocalRandom.current().nextInt(mazeSideLength/2 + 1, mazeSideLength);
+        int xCoordinate = ThreadLocalRandom.current().nextInt(mazeSideLength / 2 + 1, mazeSideLength);
+        int yCoordinate = ThreadLocalRandom.current().nextInt(mazeSideLength / 2 + 1, mazeSideLength);
 
         setCoordinates(xCoordinate, yCoordinate);
         mazeInfo = newMazeInfo;
@@ -46,8 +48,8 @@ public class Enemy extends Sprite {
     private void buildVisitedGrid() {
         this.visitedGrid = new Boolean[mazeInfo.length][mazeInfo[0].length];
 
-        for(int i = 0; i < visitedGrid.length; i++) {
-            for(int j = 0; j < visitedGrid[i].length; j++) {
+        for (int i = 0; i < visitedGrid.length; i++) {
+            for (int j = 0; j < visitedGrid[i].length; j++) {
                 this.visitedGrid[i][j] = false;
             }
         }
@@ -55,6 +57,7 @@ public class Enemy extends Sprite {
 
     /**
      * This method will return the path that the enemy has found to the player
+     *
      * @return array list of coordinates that is a path
      */
     public ArrayList<int[]> getPath() {
@@ -66,9 +69,10 @@ public class Enemy extends Sprite {
     /**
      * This method will generate the shortest path using breadth first search
      * to the goal coordinates
+     *
      * @param goal coordinates of where the path should be found to (player position)
      */
-    public void Pathfinding(int[] goal) {
+    public void pathfinding(int[] goal) {
         buildVisitedGrid(); //builds a grid to keep track of which grids have been visited
 
         Queue<ArrayList<int[]>> queue = new LinkedList<ArrayList<int[]>>();
@@ -81,22 +85,22 @@ public class Enemy extends Sprite {
 
         queue.add(currentPath); //adds the initial position of the enemy
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             //elements in the queue are the paths traveled
             currentPath = queue.remove();
 
-            int[] currentGrid = currentPath.get(currentPath.size()-1);
+            int[] currentGrid = currentPath.get(currentPath.size() - 1);
 
             setVisited(currentGrid);
 
-            if(Arrays.equals(currentGrid, goal)) {
+            if (Arrays.equals(currentGrid, goal)) {
                 break;
             }
 
             ArrayList<int[]> paths = buildPaths(currentGrid);
 
             //This loop adds all the possible paths to the queue
-            for(int i = 0; i < paths.size(); i++) {
+            for (int i = 0; i < paths.size(); i++) {
                 ArrayList<int[]> pathCopy = new ArrayList<int[]>(currentPath);
                 pathCopy.add(paths.get(i));
                 queue.add(pathCopy);
@@ -109,6 +113,7 @@ public class Enemy extends Sprite {
     /**
      * This sets a grid in the visited array as visited. The grid that is visited is passed as a
      * parameter.
+     *
      * @param currentGrid the coordinates of the grid that is being visited
      */
     private void setVisited(int[] currentGrid) {
@@ -121,6 +126,7 @@ public class Enemy extends Sprite {
     /**
      * This method will get all possible next paths by checking each side of the current coordinates
      * this will then return all the possible paths as an ArrayList
+     *
      * @param currentCoordinates coordinates of the current position
      * @return all of the potential next moves
      */
@@ -132,27 +138,27 @@ public class Enemy extends Sprite {
 
         GridData currentGrid = mazeInfo[y][x]; //get the grid attributes
 
-        if(currentGrid.getLeftWall() == false) {
-            if(visitedGrid[y][x-1] == false) {
-                int[] newMove = new int[] {currentCoordinates[0] - 1, currentCoordinates[1]};
+        if (currentGrid.getLeftWall() == false) {
+            if (visitedGrid[y][x - 1] == false) {
+                int[] newMove = new int[]{currentCoordinates[0] - 1, currentCoordinates[1]};
                 paths.add(newMove);
             }
         }
-        if(currentGrid.getRightWall() == false) {
-            if(visitedGrid[y][x+1] == false) {
-                int[] newMove = new int[] {currentCoordinates[0] + 1, currentCoordinates[1]};
+        if (currentGrid.getRightWall() == false) {
+            if (visitedGrid[y][x + 1] == false) {
+                int[] newMove = new int[]{currentCoordinates[0] + 1, currentCoordinates[1]};
                 paths.add(newMove);
             }
         }
-        if(currentGrid.getTopWall() == false) {
-            if(visitedGrid[y-1][x] == false) {
-                int[] newMove = new int[] {currentCoordinates[0], currentCoordinates[1] - 1};
+        if (currentGrid.getTopWall() == false) {
+            if (visitedGrid[y - 1][x] == false) {
+                int[] newMove = new int[]{currentCoordinates[0], currentCoordinates[1] - 1};
                 paths.add(newMove);
             }
         }
-        if(currentGrid.getBottomWall() == false) {
-            if(visitedGrid[y+1][x] == false) {
-                int[] newMove = new int[] {currentCoordinates[0], currentCoordinates[1] + 1};
+        if (currentGrid.getBottomWall() == false) {
+            if (visitedGrid[y + 1][x] == false) {
+                int[] newMove = new int[]{currentCoordinates[0], currentCoordinates[1] + 1};
                 paths.add(newMove);
             }
         }
@@ -170,8 +176,7 @@ public class Enemy extends Sprite {
             int nextY = nextGrid[1];
 
             setCoordinates(nextX, nextY);
-        }
-        catch(IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException e) {
             System.out.println("Game Over");
         }
     }

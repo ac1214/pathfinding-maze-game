@@ -4,14 +4,10 @@ import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Coin extends Sprite {
-    int n;
-    int r;
-    int c;
-    double[] Coord;
-
     /**
      * Constructor for coin object
      * x, y coordinates randomly generated
+     *
      * @param mazeSideLength Side length of the maze
      */
     public Coin(int mazeSideLength) {
@@ -22,17 +18,14 @@ public class Coin extends Sprite {
 
     /**
      * removes coin from list of coins if player x y coordinates equals coin x y coordinates
+     *
      * @param currentCoins Array list of the current coins
-     * @param player Player object  to get the location
+     * @param player       Player object  to get the location
      * @return Updated Array List of coins
      */
-    public ArrayList<Coin> removeCoin(ArrayList<Coin> currentCoins, Player player){
-		/*
-		if player location == coin location
-			set coin in coins with that location to null
-		*/
-        for (Coin c : currentCoins){
-            if (c.getXCoord() == player.getXCoord() && c.getYCoord() == player.getYCoord()){
+    public ArrayList<Coin> removeCoin(ArrayList<Coin> currentCoins, Player player) {
+        for (Coin c : currentCoins) {
+            if (c.getXPos() == player.getXPos() && c.getYPos() == player.getYPos()) {
                 currentCoins.remove(c);
             }
         }

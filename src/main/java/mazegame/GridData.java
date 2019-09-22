@@ -14,7 +14,8 @@ public class GridData {
 
     /**
      * This constructor sets the row and column of each grid
-     * @param row row of grid
+     *
+     * @param row    row of grid
      * @param column column of grid
      */
     public GridData(int row, int column) {
@@ -24,6 +25,7 @@ public class GridData {
 
     /**
      * Getter for grid row
+     *
      * @return grid's row
      */
     public int getGridRow() {
@@ -32,6 +34,7 @@ public class GridData {
 
     /**
      * Getter for grid column
+     *
      * @return grid's column
      */
     public int getGridColumn() {
@@ -40,6 +43,7 @@ public class GridData {
 
     /**
      * Getter to check if grid is visited by the maze generation algorithm
+     *
      * @return boolean value of if visited
      */
     public boolean getVisited() {
@@ -83,14 +87,16 @@ public class GridData {
 
     /**
      * Returns a string that shows which walls currently exist
+     *
      * @return which walls exist
      */
     public String getWalls() {
-        return ("left: " + leftWall + " top: " + topWall +" right: " + rightWall + " bottom: " + bottomWall);
+        return ("left: " + leftWall + " top: " + topWall + " right: " + rightWall + " bottom: " + bottomWall);
     }
 
     /**
      * Getter for if left wall exists
+     *
      * @return boolean of if left wall exists
      */
     public boolean getLeftWall() {
@@ -99,6 +105,7 @@ public class GridData {
 
     /**
      * Getter for if top wall exists
+     *
      * @return boolean of if top wall exists
      */
     public boolean getTopWall() {
@@ -107,6 +114,7 @@ public class GridData {
 
     /**
      * Getter for if right wall exists
+     *
      * @return boolean of if right wall exists
      */
     public boolean getRightWall() {
@@ -115,6 +123,7 @@ public class GridData {
 
     /**
      * Getter for if bottom wall exists
+     *
      * @return boolean of if bottom wall exists
      */
     public boolean getBottomWall() {

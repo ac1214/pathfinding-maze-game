@@ -6,6 +6,7 @@ public class MazeDisplay {
 
     /**
      * A constructor which sets the mazeData value.
+     *
      * @param maze - Array of grid properties.
      */
     public MazeDisplay(GridData[][] maze) {
@@ -18,29 +19,26 @@ public class MazeDisplay {
     public void printMaze() {
         int row = 0;
 
-        for(int i = 0; i < mazeData.length*2; i++) {
-            if(i%2 == 0) {
-                for(int j = 0; j < mazeData[row].length ; j++) {
+        for (int i = 0; i < mazeData.length * 2; i++) {
+            if (i % 2 == 0) {
+                for (int j = 0; j < mazeData[row].length; j++) {
                     System.out.print("+");
-                    if(mazeData[row][j].getTopWall() == true) {
+                    if (mazeData[row][j].getTopWall() == true) {
                         System.out.print("--");
-                    }
-                    else {
+                    } else {
                         System.out.print("  ");
                     }
                 }
 
                 System.out.print("+");
                 System.out.println();
-            }
-            else {
+            } else {
                 System.out.print("|");
 
-                for(int l = 0; l < mazeData[row].length ; l++) {
-                    if(mazeData[row][l].getRightWall() == true) {
+                for (int l = 0; l < mazeData[row].length; l++) {
+                    if (mazeData[row][l].getRightWall() == true) {
                         System.out.print("  |");
-                    }
-                    else {
+                    } else {
                         System.out.print("   ");
                     }
                 }
@@ -50,11 +48,10 @@ public class MazeDisplay {
             }
         }
 
-        for(int k = 0; k < (mazeData.length*2); k++) {
-            if (k%(2) == 0) {
+        for (int k = 0; k < (mazeData.length * 2); k++) {
+            if (k % (2) == 0) {
                 System.out.print("+");
-            }
-            else {
+            } else {
                 System.out.print("--");
             }
         }

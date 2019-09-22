@@ -2,7 +2,9 @@ package mazegame;
 
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
+
 import java.util.ArrayList;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -62,7 +64,8 @@ public class App extends Application {
         Enemy enemy = new Enemy(mazeSideLength, mazeInfo);
 
         AnimationTimer gameLoop = new AnimationTimer() {
-            private long lastUpdate = 0 ;
+            private long lastUpdate = 0;
+
             @Override
             public void handle(long now) {
                 if (now - lastUpdate >= 28_000_0000) {
@@ -75,19 +78,19 @@ public class App extends Application {
                             final Canvas canvas = new Canvas(SCREENRESOLUTION, SCREENRESOLUTION);
                             GraphicsContext gc = canvas.getGraphicsContext2D();
 
-                            if(key.getCode() == KeyCode.W) {
+                            if (key.getCode() == KeyCode.W) {
                                 player.movePlayer("W", mazeInfo);
                                 currentPlayerImage = PLAYERIMAGEUP;
                             }
-                            if(key.getCode() == KeyCode.A) {
+                            if (key.getCode() == KeyCode.A) {
                                 player.movePlayer("A", mazeInfo);
                                 currentPlayerImage = PLAYERIMAGELEFT;
                             }
-                            if(key.getCode() == KeyCode.S) {
+                            if (key.getCode() == KeyCode.S) {
                                 player.movePlayer("S", mazeInfo);
                                 currentPlayerImage = PLAYERIMAGEDOWN;
                             }
-                            if(key.getCode() == KeyCode.D) {
+                            if (key.getCode() == KeyCode.D) {
                                 player.movePlayer("D", mazeInfo);
                                 currentPlayerImage = PLAYERIMAGERIGHT;
                             }
@@ -110,7 +113,7 @@ public class App extends Application {
                     final Canvas canvas = new Canvas(SCREENRESOLUTION, SCREENRESOLUTION);
                     GraphicsContext gc = canvas.getGraphicsContext2D();
 
-                    enemy.Pathfinding(player.getCoordinates());
+                    enemy.pathfinding(player.getCoordinates());
                     enemy.moveEnemy();
 
                     GameManagement.displayMaze(gc, mazeInfo, SCREENRESOLUTION, mazeSideLength);
@@ -121,7 +124,7 @@ public class App extends Application {
                     root.getChildren().add(BACKGROUNDIMAGE);
                     root.getChildren().add(canvas);
 
-                    lastUpdate = now ;
+                    lastUpdate = now;
                 }
                 checkIfCaught(player, enemy);
             }
@@ -131,12 +134,13 @@ public class App extends Application {
     }
 
     /**
-     * This method checks if the player is caught resets the game if the player has been caught
+     * This method checks if the player is caught and resets the game if the player has been caught
+     *
      * @param player Player object to check coordinates
-     * @param enemy Enemy object to check coordinates
+     * @param enemy  Enemy object to check coordinates
      */
     public void checkIfCaught(Player player, Enemy enemy) {
-        if(GameManagement.playerCaught(player, enemy) == true) {
+        if (GameManagement.playerCaught(player, enemy)) {
             resetGame();
             currentCoins = GameManagement.createCoins(numOfCoins, mazeSideLength);
             player.setCoordinates(0, 0);
@@ -146,11 +150,12 @@ public class App extends Application {
 
     /**
      * Checks if there are still coins on the board if there are none the game will level up
+     *
      * @param player Player object to check coordinates
-     * @param enemy Enemy object to set new coordinates
+     * @param enemy  Enemy object to set new coordinates
      */
     public void checkCoins(Player player, Enemy enemy) {
-        if(currentCoins.size() == 0) {
+        if (currentCoins.size() == 0) {
             currentCoins = GameManagement.createCoins(numOfCoins, mazeSideLength);
             increaseDifficulty();
             setMazeAttributes();
@@ -168,8 +173,8 @@ public class App extends Application {
      * This method sets the initial maze attributes to the default values
      */
     public void setMazeAttributes() {
-        this.mazeSideLength = INITIALMAZESIDELENGTH + level*MAZESIDEINCREMENT;
-        this.numOfLoops = INITIALLOOPCOUNT + level*LOOPINCREMENT;
+        this.mazeSideLength = INITIALMAZESIDELENGTH + level * MAZESIDEINCREMENT;
+        this.numOfLoops = INITIALLOOPCOUNT + level * LOOPINCREMENT;
 
         this.mazeData = new MazeData(mazeSideLength, mazeSideLength);
         this.currentCoins = GameManagement.createCoins(numOfCoins, mazeSideLength);
