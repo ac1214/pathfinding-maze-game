@@ -39,13 +39,13 @@
                     <release>${maven.compiler.release}</release>
                     <jlinkImageName>pathfinding-maze-game</jlinkImageName>
                     <launcher>launcher</launcher>
-                    <mainClass>src/App</mainClass>
+                    <mainClass>mazegame.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>
         <resources>
             <resource>
-                <directory>src/resources</directory>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
 

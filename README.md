@@ -5,7 +5,11 @@ This is a game that generates a maze using a depth-first search algorithm. The o
 
 
 ## Run this project  
-Maven can be used to run this program.
+Maven can be used to run this program through the command line with the following command.
+
+    mvn clean javafx:run
+
+Alternatively this project can be imported into IntelliJ to  build and run.
 
 ## Credits
 **Image Credits**  
@@ -14,5 +18,5 @@ Cat image is from [opengameart.org/content/pixel-cat](https://opengameart.org/co
 Rabbit image is from [opengameart.org/content/rabbit-2](https://opengameart.org/content/rabbit-2)
 
 **Maven**  
-The maven files that I have modified for this project can be found at  
+The maven build files that I have modified for this project can be found at  
 [github.com/openjfx/samples/tree/master/IDE/IntelliJ/Modular/Maven](https://github.com/openjfx/samples/tree/master/IDE/IntelliJ/Modular/Maven)   Copyright (c) 2019, Gluon
