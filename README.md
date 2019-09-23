@@ -12,6 +12,8 @@ To run this project, input the following command while in the project directory.
 
 Alternatively this project can be imported into IntelliJ to  build and run.
 
+The w, a, s, and d keys are used to control the player.
+
 ## Credits
 **Image Credits**  
 Coin image is from [opengameart.org/content/spinning-coin-8-bit-sprite](https://opengameart.org/content/spinning-coin-8-bit-sprite)  
