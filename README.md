@@ -18,7 +18,8 @@ The w, a, s, and d keys are used to control the player.
 **Image Credits**  
 Coin image is from [opengameart.org/content/spinning-coin-8-bit-sprite](https://opengameart.org/content/spinning-coin-8-bit-sprite)  
 Cat image is from [opengameart.org/content/pixel-cat](https://opengameart.org/content/pixel-cat)  
-Rabbit image is from [opengameart.org/content/rabbit-2](https://opengameart.org/content/rabbit-2)
+Rabbit image is from [opengameart.org/content/rabbit-2](https://opengameart.org/content/rabbit-2)  
+Background image is from [opengameart.org/content/seamless-grass-texture-ii](https://opengameart.org/content/seamless-grass-texture-ii)
 
 **Maven**  
 The maven build files that I have modified for this project can be found at  
