@@ -22,5 +22,5 @@ Rabbit image is from [opengameart.org/content/rabbit-2](https://opengameart.org/
 Background image is from [opengameart.org/content/seamless-grass-texture-ii](https://opengameart.org/content/seamless-grass-texture-ii)
 
 **Maven**  
-The maven build files that I have modified for this project can be found at  
+The maven build files that were modified for this project can be found at  
 [github.com/openjfx/samples/tree/master/IDE/IntelliJ/Modular/Maven](https://github.com/openjfx/samples/tree/master/IDE/IntelliJ/Modular/Maven)   Copyright (c) 2019, Gluon
